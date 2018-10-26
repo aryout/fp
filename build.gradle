@@ -1,0 +1,102 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '1.8'
+    id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.fintell'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/libs-release" }
+}
+
+configurations {
+    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    all*.exclude group: 'ch.qos.logback', module: 'logback-classic'
+    all*.exclude group: 'ch.qos.logback', module: 'logback-core'
+}
+dependencies {
+    // implementation('com.alibaba.nacos:nacos-spring-context:0.1.0-RC1')
+    implementation('org.springframework.boot:spring-boot-starter-aop'){
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    implementation('org.springframework.boot:spring-boot-starter-cache')
+    implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
+
+    // redis
+    implementation('org.springframework.boot:spring-boot-starter-data-redis'){
+        exclude group: 'io.lettuce'
+    }
+    implementation('redis.clients:jedis:2.9.0'){
+        exclude group: 'org.apache.commons', module: 'commons-pool2'
+    }
+    implementation('org.apache.commons:commons-pool2:2.6.0')
+    
+    
+    implementation('org.springframework.boot:spring-boot-starter-web'){
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+    
+    // 数据源 orm
+    implementation('org.springframework.boot:spring-boot-starter-jdbc')
+    implementation('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')
+    runtimeOnly('mysql:mysql-connector-java')
+    implementation 'io.shardingjdbc:sharding-jdbc-core:2.0.3'
+    implementation('com.alibaba:druid:1.1.6')
+
+    // dubbo - zk
+    implementation("com.alibaba:dubbo:2.5.3") {
+        exclude group: 'org.springframework'
+    }
+    implementation 'javassist:javassist:3.12.1.GA'
+    implementation 'com.101tec:zkclient:0.3'
+    implementation 'org.apache.zookeeper:zookeeper:3.4.5'
+
+    // swagger
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+
+    // mq
+    compile group: 'org.apache.rocketmq', name: 'rocketmq-client', version: '4.2.0'
+    // compile group: 'org.apache.rocketmq', name: 'spring-boot-starter-rocketmq', version: '4.2.0'
+    compile group: 'org.springframework', name: 'spring-messaging', version: '5.0.8.RELEASE'
+    compile group: 'io.netty', name: 'netty-tcnative', version: '2.0.7.Final'
+
+    implementation('org.springframework.session:spring-session-data-redis')
+
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    implementation('org.springframework.boot:spring-boot-starter-quartz')
+
+    // lombok
+    compileOnly('org.springframework.boot:spring-boot-configuration-processor'){
+        exclude group: 'org.projectlombok', module: 'lombok'
+    }
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
+    implementation 'com.github.pagehelper:pagehelper:4.1.1'
+    implementation "com.alibaba:fastjson:1.2.34"
+    implementation group: 'com.aliyun.oss', name: 'aliyun-sdk-oss', version: '2.7.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}

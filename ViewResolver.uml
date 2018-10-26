@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.web.servlet.ViewResolver</OriginalElement>
+  <nodes>
+    <node x="1351.0" y="0.0">org.springframework.web.servlet.ViewResolver</node>
+    <node x="843.0000000000001" y="160.0">org.springframework.web.servlet.view.ResourceBundleViewResolver</node>
+    <node x="455.0000000000001" y="240.0">org.springframework.web.servlet.view.tiles3.TilesViewResolver</node>
+    <node x="1735.0" y="80.0">org.springframework.web.servlet.view.ViewResolverComposite</node>
+    <node x="862.0000000000001" y="240.0">org.springframework.web.servlet.view.InternalResourceViewResolver</node>
+    <node x="1106.0" y="240.0">org.springframework.web.servlet.view.xslt.XsltViewResolver</node>
+    <node x="0.0" y="320.0">org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver</node>
+    <node x="1084.0" y="80.0">org.springframework.web.servlet.view.BeanNameViewResolver</node>
+    <node x="446.0000000000001" y="320.0">org.springframework.boot.web.servlet.view.MustacheViewResolver</node>
+    <node x="213.0" y="320.0">org.springframework.web.servlet.view.groovy.GroovyMarkupViewResolver</node>
+    <node x="1083.0" y="160.0">org.springframework.web.servlet.view.XmlViewResolver</node>
+    <node x="627.0000000000001" y="240.0">org.springframework.web.servlet.view.script.ScriptTemplateViewResolver</node>
+    <node x="646.0000000000001" y="160.0">org.springframework.web.servlet.view.UrlBasedViewResolver</node>
+    <node x="842.0000000000001" y="80.0">org.springframework.web.servlet.view.AbstractCachingViewResolver</node>
+    <node x="1292.0" y="80.0">org.springframework.web.servlet.view.ContentNegotiatingViewResolver</node>
+    <node x="204.0" y="240.0">org.springframework.web.servlet.view.AbstractTemplateViewResolver</node>
+    <node x="1556.0" y="80.0">org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder.StaticViewResolver</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.web.servlet.view.ResourceBundleViewResolver" target="org.springframework.web.servlet.view.AbstractCachingViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.InternalResourceViewResolver" target="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="974.0000000000001" y="220.0" />
+      <point x="769.9000000000001" y="220.0" />
+      <point x="35.39999999999998" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.BeanNameViewResolver" target="org.springframework.web.servlet.ViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="1178.0" y="60.0" />
+      <point x="1388.8000000000002" y="60.0" />
+      <point x="-25.200000000000045" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.XmlViewResolver" target="org.springframework.web.servlet.view.AbstractCachingViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="1157.0" y="135.0" />
+      <point x="1027.0" y="135.0" />
+      <point x="74.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder.StaticViewResolver" target="org.springframework.web.servlet.ViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="1635.5" y="60.0" />
+      <point x="1439.2000000000003" y="60.0" />
+      <point x="25.200000000000045" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.AbstractTemplateViewResolver" target="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="319.5" y="210.0" />
+      <point x="663.7000000000002" y="210.0" />
+      <point x="-70.79999999999995" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver" target="org.springframework.web.servlet.view.AbstractTemplateViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="96.5" y="295.0" />
+      <point x="242.5" y="295.0" />
+      <point x="-77.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.AbstractCachingViewResolver" target="org.springframework.web.servlet.ViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="953.0000000000001" y="50.0" />
+      <point x="1363.6" y="50.0" />
+      <point x="-50.40000000000009" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.groovy.GroovyMarkupViewResolver" target="org.springframework.web.servlet.view.AbstractTemplateViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.ViewResolverComposite" target="org.springframework.web.servlet.ViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="1830.0" y="50.0" />
+      <point x="1464.4" y="50.0" />
+      <point x="50.40000000000009" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.script.ScriptTemplateViewResolver" target="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.ContentNegotiatingViewResolver" target="org.springframework.web.servlet.ViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.boot.web.servlet.view.MustacheViewResolver" target="org.springframework.web.servlet.view.AbstractTemplateViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="537.5000000000001" y="295.0" />
+      <point x="396.5" y="295.0" />
+      <point x="77.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.tiles3.TilesViewResolver" target="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="531.0000000000001" y="220.0" />
+      <point x="699.1000000000001" y="220.0" />
+      <point x="-35.39999999999998" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.xslt.XsltViewResolver" target="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="1180.0" y="210.0" />
+      <point x="805.3000000000001" y="210.0" />
+      <point x="70.79999999999995" y="15.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.view.UrlBasedViewResolver" target="org.springframework.web.servlet.view.AbstractCachingViewResolver">
+      <point x="0.0" y="-15.0" />
+      <point x="734.5000000000001" y="135.0" />
+      <point x="879.0000000000001" y="135.0" />
+      <point x="-74.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1" x="580.9090909090909" y="147.18181818181824" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
